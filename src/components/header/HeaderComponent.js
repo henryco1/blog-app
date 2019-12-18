@@ -2,52 +2,78 @@ import React from 'react';
 import { string } from 'prop-types';
 import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
-import BackgroundImg from '../../assets/landing.jpg';
+import BackgroundImgXLarge from '../../assets/landingXLarge.jpg';
+import BackgroundImgLarge from '../../assets/landingLarge.jpg';
+import BackgroundImgMedium from '../../assets/landingMedium.jpg';
+import BackgroundImgSmall from '../../assets/landingSmall.jpg';
 
 const styles = StyleSheet.create({
+    header: {
+        height: '40vh',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
     title: {
         fontFamily: 'Muli',
         fontStyle: 'normal',
         fontWeight: 'bold',
-        fontSize: '80px',
+        fontSize: '40px',
         lineHeight: '98px',
         letterSpacing: 0.3,
-        textAlign: 'center',
         color: '#FFFFFF',
+
+        position: 'absolute',
+        top: '30%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
     },
     subtitle: {
         fontFamily: 'Montserrat',
         fontStyle: 'normal',
         fontWeight: 'bold',
-        fontSize: '30px',
+        fontSize: '20px',
         lineHeight: '37px',
-        textAlign: 'center',
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
     },
-    landingPicture: {
-        minWidth: "100%",
-        maxWidth: "100vw",
-        height: "auto",
+    responsiveHeader: {
+        backgroundImage: `${BackgroundImgSmall}`,
+        width: 'auto',
+        maxHeight: '30%'
     }
+
 });
 
 function HeaderComponent(props) {
     const { logo, title, subtitle, ...otherProps } = props;
     // var {width} = Dimensions.get('window');
     return (
-        <Row className={css(styles.container)}>
-            <div>
-                <img
-                    className={css(styles.landingPicture)}
-                    src= {BackgroundImg}
-                    resizeMode = 'cover'
+        <Row>
+            <header className={css(styles.header)}>
+                <img 
+                    src={BackgroundImgSmall} 
+                    srcSet={
+                        `${BackgroundImgSmall} 300w, ${BackgroundImgMedium} 768w, ${BackgroundImgLarge} 1280w, ${BackgroundImgXLarge} 3200w`
+                    }
                 />
                 <Column>
-                    <span className={css(styles.title)}>{title}</span>
-                    <span className={css(styles.subtitle)}>{subtitle}</span>
-                </Column>        
-            </div>
-            
+                    <span 
+                        className={css(styles.title)}
+                    >{title}</span>
+                    <span 
+                        className={css(styles.subtitle)}
+                    >{subtitle}</span>
+                </Column>     
+            </header>
         </Row>
     );
 }
