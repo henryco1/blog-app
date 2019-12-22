@@ -6,6 +6,10 @@ import BackgroundImgXLarge from '../../assets/landingXLarge.jpg';
 import BackgroundImgLarge from '../../assets/landingLarge.jpg';
 import BackgroundImgMedium from '../../assets/landingMedium.jpg';
 import BackgroundImgSmall from '../../assets/landingSmall.jpg';
+import About from './AboutComponent';
+import Logo from './LogoComponent';
+import Menu from './MenuComponent';
+import Search from './SearchComponent';
 
 const styles = StyleSheet.create({
     header: {
@@ -13,37 +17,28 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',
-
-        alignItems: 'center',
-        justifyContent: 'center',
-
     },
-    title: {
-        fontFamily: 'Muli',
+    headerText: {
+        fontFamily: 'Montserrat',
         fontStyle: 'normal',
         fontWeight: 'bold',
         fontSize: '40px',
-        lineHeight: '98px',
-        letterSpacing: 0.3,
-        color: '#FFFFFF',
-
         position: 'absolute',
         top: '30%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
+        textAlign: 'center',
+    },
+    title: {
+        fontSize: '40px',
+        lineHeight: '98px',
+        letterSpacing: 0.3,
+        color: '#FFFFFF',
     },
     subtitle: {
-        fontFamily: 'Montserrat',
-        fontStyle: 'normal',
-        fontWeight: 'bold',
-        fontSize: '20px',
+        fontSize: '19px',
         lineHeight: '37px',
         color: '#FFFFFF',
-
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
     },
     responsiveHeader: {
         backgroundImage: `${BackgroundImgSmall}`,
@@ -59,20 +54,28 @@ function HeaderComponent(props) {
     return (
         <Row>
             <header className={css(styles.header)}>
+                <div className={css(styles.navbar)}>
+                    <Logo/>
+                    <ul >
+                        <About/>
+                        <Menu/>
+                        <Search/>
+                    </ul>
+                </div>
                 <img 
                     src={BackgroundImgSmall} 
                     srcSet={
                         `${BackgroundImgSmall} 300w, ${BackgroundImgMedium} 768w, ${BackgroundImgLarge} 1280w, ${BackgroundImgXLarge} 3200w`
                     }
                 />
-                <Column>
+                <Column className={css(styles.headerText)}>
                     <span 
                         className={css(styles.title)}
                     >{title}</span>
                     <span 
                         className={css(styles.subtitle)}
                     >{subtitle}</span>
-                </Column>     
+                </Column>  
             </header>
         </Row>
     );
