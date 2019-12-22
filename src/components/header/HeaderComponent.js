@@ -6,25 +6,19 @@ import BackgroundImgXLarge from '../../assets/landingXLarge.jpg';
 import BackgroundImgLarge from '../../assets/landingLarge.jpg';
 import BackgroundImgMedium from '../../assets/landingMedium.jpg';
 import BackgroundImgSmall from '../../assets/landingSmall.jpg';
-import About from './AboutComponent';
-import Logo from './LogoComponent';
-import Menu from './MenuComponent';
-import Search from './SearchComponent';
 import styles from './header.css';
 
-                    // <a href="e" className='Logo'>Logo</a>
 function HeaderComponent(props) {
     const { logo, title, subtitle, ...otherProps } = props;
-    // var {width} = Dimensions.get('window');
     return (
         <Row>
             <header className='header'>
                 <div className='navbar'>
                     <ul className='navlinks'>
                         <li className='leftnav'><a href="ab">Logo</a></li>
-                        <li className='rightnav'><a href="ab">Home</a></li>
-                        <li className='rightnav'><a href="c">About</a></li>
                         <li className='rightnav'><a href="d">Blog</a></li>
+                        <li className='rightnav'><a href="c">About</a></li>
+                        <li className='rightnav'><a href="ab">Home</a></li>
                     </ul>
                 </div>
                 <img 

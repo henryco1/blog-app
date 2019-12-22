@@ -42,13 +42,15 @@ class App extends React.Component {
     render() {
         const { width, height, logo, title, subtitle } = this.state;
         return (
-            <Row className={css(styles.container)}>
+            <Column className={css(styles.container)}>
                     <HeaderComponent 
                       logo={logo}
                       title={title} 
                       subtitle={subtitle}
                     />
-            </Row>
+                    <MainBlogPostComponent
+                    />
+            </Column>
         );
     }
 }

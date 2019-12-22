@@ -1,0 +1,24 @@
+.mainBlogComponent {
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;  
+    padding-left: 50px;
+    padding-right: 50px;
+    list-style: none;
+}
+.blogImg {
+    float: left;
+    width: 50%;
+}
+.blogImg img {
+    width: 100%;
+    height: auto;
+}
+.blogInfo {
+    float: right;
+    width: 50%;
+    font-size: 20px;
+    color: white;
+}
