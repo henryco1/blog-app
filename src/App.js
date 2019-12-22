@@ -41,17 +41,57 @@ class App extends React.Component {
     render() {
         const { width, height, logo, title, subtitle } = this.state;
         return (
-            <Column className={css(styles.container)}>
-                    <HeaderComponent 
-                      logo={logo}
-                      title={title} 
-                      subtitle={subtitle}
-                    />
-                    <MainBlogPostComponent
-                    />
+            <Column vertical="spaced">
+                <Row horizontal="spaced">
+                    <span> Logo </span>
+                    <Row horizontal="spaced">
+                        <span> About </span>
+                        <span> Blog </span>
+                    </Row>
+                </Row>
+                <Row flexGrow={1} horizontal="center">
+                    <Column horizontal="center">
+                        <h1> Content 1 </h1>
+                        <span> Content 2 </span>
+                    </Column>
+                </Row>
+                <Row vertical="center">
+                    <Column flexGrow={1} horizontal="center"> 
+                        <h2> MainBlog 1 </h2>
+                        <span> MainBlogContent </span>
+                    </Column>
+                </Row>
+                <Row vertical="center">
+                    <Column flexGrow={1} horizontal="center"> 
+                        <h3> SubBlog 1 </h3>
+                        <span> SubBlogContent </span>
+                    </Column>
+                    <Column flexGrow={1} horizontal="center"> 
+                        <h3> SubBlog 1 </h3>
+                        <span> SubBlogContent </span>
+                    </Column>
+                    <Column flexGrow={1} horizontal="center"> 
+                        <h3> SubBlog 1 </h3>
+                        <span> SubBlogContent </span>
+                    </Column>
+                    <Column flexGrow={1} horizontal="center"> 
+                        <h3> SubBlog 1 </h3>
+                        <span> SubBlogContent </span>
+                    </Column>
+                </Row>
             </Column>
         );
     }
 }
 
 export default App;
+
+            // <Column className={css(styles.container)}>
+            //         <HeaderComponent 
+            //           logo={logo}
+            //           title={title} 
+            //           subtitle={subtitle}
+            //         />
+            //         <MainBlogPostComponent
+            //         />
+            // </Column>
