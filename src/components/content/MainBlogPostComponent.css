@@ -1,24 +1,25 @@
-.mainBlogComponent {
-    position: relative;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 100%;  
-    padding-left: 50px;
-    padding-right: 50px;
-    list-style: none;
+.mainBlogCard {
+    width: 100%;        
+    border: 5px solid black;
+    display: inline-block;
+    padding: 2px 16px;
+
 }
+
 .blogImg {
-    float: left;
-    width: 50%;
+    max-width: 50%;
+    max-height: 50%;
+    vertical-align: top;
+    display: inline-block;
 }
 .blogImg img {
-    width: 100%;
-    height: auto;
+    float: left;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
 }
 .blogInfo {
     float: right;
     width: 50%;
-    font-size: 20px;
-    color: white;
+    display: inline-block;
 }

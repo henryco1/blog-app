@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     container: {
         height: '100%',
         minHeight: '100vh',
-        backgroundColor: '#000000'
     },
     content: {
         marginTop: 54
