@@ -7,9 +7,9 @@
   pointer-events: none;
 }
 .MainBlogComponent {
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 12px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 .MainBlogImg {
     width: 100%;
@@ -21,9 +21,8 @@
     flex: 1;
 }
 .SideBlogComponent {
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 12px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 .SideBlogImg {
     width: 100%;
@@ -34,18 +33,26 @@
 .SideBlogInfo img {
     flex: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.DividerLine {
+    height: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: 70px;
+    display: flex;  
+    margin-right: 70px;
+    border-bottom: 1px solid #E5E5E5;
 }
-
-.App-link {
-  color: #61dafb;
+.DividerNoLine {
+    height: 25px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.NavbarLinks {
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+.NavbarLinks a:visited, a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 20px;
 }

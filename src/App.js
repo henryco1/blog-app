@@ -24,18 +24,29 @@ const styles = StyleSheet.create({
 });
 
 const mainBlogStyle = {
-    backgroundColor: "#5CAB7D",
     minWidth: 250,
     maxWidth: 500,
     padding: 12
 }
 
 const sideBlogStyle = {
-    backgroundColor: "#8DBC8E",
-    minWidth: 100,
-    maxWidth: 200,
+    minWidth: 150,
+    maxWidth: 250,
     padding: 12,
-    borderStyle: 'dotted'
+    margin: '20px',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+}
+
+const navbarStyle = {
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    maxHeight: 24,
+    // backgroundColor: 'black',
+    position: 'fixed',
+    top: 0,
+    overflow: 'hidden',
+    width: '100%',
+    zIndex: 1000,
 }
 
 class App extends React.Component {
@@ -60,11 +71,12 @@ class App extends React.Component {
         const { width, height, logo, title, subtitle } = this.state;
         return (
             <Column vertical="spaced">
-                <Row horizontal="spaced">
-                    <span> Logo </span>
-                    <Row horizontal="spaced">
-                        <span> About </span>
-                        <span> Blog </span>
+                <Row horizontal="spaced" style={navbarStyle}>
+                    <a href="x" style={{paddingLeft: "24px"}} 
+                                className="NavbarLinks"> Logo </a>
+                    <Row horizontal="spaced" style={{paddingRight: "24px"}}>
+                        <a href="x" className="NavbarLinks"> About </a>
+                        <a href="x" className="NavbarLinks"> Blog </a>
                     </Row>
                 </Row>
                 <Row flexGrow={1} horizontal="center">
@@ -76,7 +88,13 @@ class App extends React.Component {
                         />
                     </Column>
                 </Row>
-                <Row alignSelf="center" className="MainBlogComponent">
+                <Row alignSelf="center" className="MainBlogComponent"
+                    breakpoints={{
+                        900: {
+                            flexDirection: "column"
+                        },
+                    }}
+                >
                     <Column flexGrow={1} horizontal="center" style={mainBlogStyle}>
                         <img 
                             src={BlogImg}
@@ -92,7 +110,17 @@ class App extends React.Component {
                         </p>
                     </Column>
                 </Row>
-                <Row alignSelf="center" className="SideBlogComponent">
+                <Column horizontal="center" alignSelf="center"> 
+                    <div className="DividerLine"/>
+                    <div className="DividerNoLine"/>
+                </Column>
+                <Row alignSelf="center" className="SideBlogComponent" 
+                    breakpoints={{
+                    880: {
+                            flexDirection: "column-reverse"
+                        },
+                    }}
+                >
                     <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
                         <img 
                             src={BlogImg}
