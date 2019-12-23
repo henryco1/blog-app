@@ -13,16 +13,8 @@ function HeaderComponent(props) {
     return (
         <Row>
             <header className='header'>
-                <div className='navbar'>
-                    <ul className='navlinks'>
-                        <li className='leftnav'><a href="ab">Logo</a></li>
-                        <li className='rightnav'><a href="d">Blog</a></li>
-                        <li className='rightnav'><a href="c">About</a></li>
-                        <li className='rightnav'><a href="ab">Home</a></li>
-                    </ul>
-                </div>
                 <img 
-                    src={BackgroundImgSmall} 
+                    src={BackgroundImgXLarge} 
                     srcSet={
                         `${BackgroundImgSmall} 300w, ${BackgroundImgMedium} 768w, ${BackgroundImgLarge} 1280w, ${BackgroundImgXLarge} 3200w`
                     }
@@ -47,3 +39,15 @@ HeaderComponent.propTypes = {
 };
 
 export default HeaderComponent;
+
+                // <div className='navbar'>
+                //     <ul className='navlinks'>
+                //         <li className='leftnav'><a href="ab">Logo</a></li>
+                //         <li className='rightnav'><a href="d">Blog</a></li>
+                //         <li className='rightnav'><a href="c">About</a></li>
+                //         <li className='rightnav'><a href="ab">Home</a></li>
+                //     </ul>
+                // </div>
+                    // srcSet={
+                    //     `${BackgroundImgSmall} 300w, ${BackgroundImgMedium} 768w, ${BackgroundImgLarge} 1280w, ${BackgroundImgXLarge} 3200w`
+                    // }

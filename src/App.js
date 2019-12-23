@@ -4,6 +4,9 @@ import { StyleSheet, css } from 'aphrodite';
 import MainBlogPostComponent from './components/content/MainBlogPostComponent';
 import SideBlogPostComponent from './components/content/SideBlogPostComponent';
 import HeaderComponent from './components/header/HeaderComponent';
+import BlogImg from './assets/blogImg.png';
+import BlogInfoComponent from './components/content/BlogInfoComponent';
+
 import './App.css';
 
 const styles = StyleSheet.create({
@@ -19,6 +22,21 @@ const styles = StyleSheet.create({
         padding: 30
     }
 });
+
+const mainBlogStyle = {
+    backgroundColor: "#5CAB7D",
+    minWidth: 250,
+    maxWidth: 500,
+    padding: 12
+}
+
+const sideBlogStyle = {
+    backgroundColor: "#8DBC8E",
+    minWidth: 100,
+    maxWidth: 200,
+    padding: 12,
+    borderStyle: 'dotted'
+}
 
 class App extends React.Component {
 
@@ -50,33 +68,70 @@ class App extends React.Component {
                     </Row>
                 </Row>
                 <Row flexGrow={1} horizontal="center">
-                    <Column horizontal="center">
-                        <h1> Content 1 </h1>
-                        <span> Content 2 </span>
+                    <Column flexGrow={1}>
+                        <HeaderComponent 
+                          logo={logo}
+                          title={title} 
+                          subtitle={subtitle}
+                        />
                     </Column>
                 </Row>
-                <Row vertical="center">
-                    <Column flexGrow={1} horizontal="center"> 
-                        <h2> MainBlog 1 </h2>
-                        <span> MainBlogContent </span>
+                <Row alignSelf="center" className="MainBlogComponent">
+                    <Column flexGrow={1} horizontal="center" style={mainBlogStyle}>
+                        <img 
+                            src={BlogImg}
+                            className="MainBlogImg"
+                        />
+                    </Column>
+                    <Column flexGrow={1} horizontal="center" style={mainBlogStyle}> 
+                        <p className="MainBlogInfo">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec faucibus quam vitae dictum volutpat. 
+                            Quisque quis ante a sem ullamcorper cursus quis id felis. 
+                            Quisque tellus eros, egestas vel rutrum nec, molestie non ipsum. 
+                        </p>
                     </Column>
                 </Row>
-                <Row vertical="center">
-                    <Column flexGrow={1} horizontal="center"> 
-                        <h3> SubBlog 1 </h3>
-                        <span> SubBlogContent </span>
+                <Row alignSelf="center" className="SideBlogComponent">
+                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
+                        <img 
+                            src={BlogImg}
+                            className="SideBlogImg"
+                        />
+                        <span> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec faucibus quam vitae dictum volutpat.  
+                        </span>
                     </Column>
-                    <Column flexGrow={1} horizontal="center"> 
-                        <h3> SubBlog 1 </h3>
-                        <span> SubBlogContent </span>
+                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
+                        <img 
+                            src={BlogImg}
+                            className="SideBlogImg"
+                        />
+                        <span> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec faucibus quam vitae dictum volutpat.  
+                        </span>
                     </Column>
-                    <Column flexGrow={1} horizontal="center"> 
-                        <h3> SubBlog 1 </h3>
-                        <span> SubBlogContent </span>
+                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
+                        <img 
+                            src={BlogImg}
+                            className="SideBlogImg"
+                        />
+                        <span> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec faucibus quam vitae dictum volutpat.  
+                        </span>
                     </Column>
-                    <Column flexGrow={1} horizontal="center"> 
-                        <h3> SubBlog 1 </h3>
-                        <span> SubBlogContent </span>
+                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
+                        <img 
+                            src={BlogImg}
+                            className="SideBlogImg"
+                        />
+                        <span> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec faucibus quam vitae dictum volutpat.  
+                        </span>
                     </Column>
                 </Row>
             </Column>

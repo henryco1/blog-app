@@ -1,9 +1,18 @@
 .header {
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    min-height: 30vh;
+    max-height: 45vh;
+    display: flex;  
+    /*align-items: stretch;*/
+    /*flex: 1;*/
+    /*display: flex;*/
+/*    flex-direction: column;*/
     position: relative;
     background-color: black;
+    /*background: url("../../assets/landingXLarge.jpg");*/
+}
+.header img {
+    flex: 1;
 }
 .headerText {
     font-family: Montserrat;
@@ -46,9 +55,4 @@ a:link, a:visited {
     display: inline-block;
     color: white;
     float: left;
-}
-.na2vbar {
-    position: fixed;
-    width: 100%;
-    height: 48px;
 }

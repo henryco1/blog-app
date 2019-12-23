@@ -6,8 +6,34 @@
   height: 40vmin;
   pointer-events: none;
 }
-
-
+.MainBlogComponent {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 12px;
+}
+.MainBlogImg {
+    width: 100%;
+    display: flex;  
+    position: relative;
+    background-color: black;
+}
+.MainBlogImg img {
+    flex: 1;
+}
+.SideBlogComponent {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 12px;
+}
+.SideBlogImg {
+    width: 100%;
+    display: flex;  
+    position: relative;
+    background-color: black;
+}
+.SideBlogInfo img {
+    flex: 1;
+}
 
 .App-header {
   background-color: #282c34;
