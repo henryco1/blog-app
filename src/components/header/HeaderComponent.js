@@ -1,33 +1,29 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { Column, Row } from 'simple-flexbox';
-import { StyleSheet, css } from 'aphrodite';
-import BackgroundImgXLarge from '../../assets/landingXLarge.jpg';
-import BackgroundImgLarge from '../../assets/landingLarge.jpg';
-import BackgroundImgMedium from '../../assets/landingMedium.jpg';
-import BackgroundImgSmall from '../../assets/landingSmall.jpg';
 import styles from './header.css';
 
+const navbarStyle = {
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    maxHeight: 24,
+    position: 'fixed',
+    top: 0,
+    overflow: 'hidden',
+    width: '100%',
+    zIndex: 1000,
+    backgroundColor: "black",
+}
+
 function HeaderComponent(props) {
-    const { logo, title, subtitle, ...otherProps } = props;
     return (
-        <Row>
-            <header className='header'>
-                <img 
-                    src={BackgroundImgXLarge} 
-                    srcSet={
-                        `${BackgroundImgSmall} 300w, ${BackgroundImgMedium} 768w, ${BackgroundImgLarge} 1280w, ${BackgroundImgXLarge} 3200w`
-                    }
-                />
-                <Column className='headerText'>
-                    <span 
-                        className='title'
-                    >{title}</span>
-                    <span 
-                        className='subtitle'
-                    >{subtitle}</span>
-                </Column>  
-            </header>
+        <Row horizontal="spaced" style={navbarStyle}>
+            <a href="x" style={{paddingLeft: "24px"}} 
+                        className="NavbarLinks"> Logo </a>
+            <Row horizontal="spaced" style={{paddingRight: "24px"}}>
+                <a href="x" className="NavbarLinks"> About </a>
+                <a href="x" className="NavbarLinks"> Blog </a>
+            </Row>
         </Row>
     );
 }
@@ -39,15 +35,3 @@ HeaderComponent.propTypes = {
 };
 
 export default HeaderComponent;
-
-                // <div className='navbar'>
-                //     <ul className='navlinks'>
-                //         <li className='leftnav'><a href="ab">Logo</a></li>
-                //         <li className='rightnav'><a href="d">Blog</a></li>
-                //         <li className='rightnav'><a href="c">About</a></li>
-                //         <li className='rightnav'><a href="ab">Home</a></li>
-                //     </ul>
-                // </div>
-                    // srcSet={
-                    //     `${BackgroundImgSmall} 300w, ${BackgroundImgMedium} 768w, ${BackgroundImgLarge} 1280w, ${BackgroundImgXLarge} 3200w`
-                    // }
