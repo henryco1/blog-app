@@ -9,7 +9,7 @@ import BackgroundImgSmall from '../../assets/landingSmall.jpg';
 import styles from './headerImg.css';
 
 function HeaderComponent(props) {
-    const { logo, title, subtitle, ...otherProps } = props;
+    const { title, subtitle, ...otherProps } = props;
     return (
         <Row>
             <header className='header'>

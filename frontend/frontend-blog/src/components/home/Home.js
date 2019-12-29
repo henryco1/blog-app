@@ -53,27 +53,82 @@ class Home extends React.Component {
     state = { 
       logo: "Bahia Verge",
       title: "Dan's Blog",
-      subtitle: "My thoughts on the stock market and other cool things"
+      subtitle: "My thoughts on the stock market and other cool things",
+      side_blog_list: []
     };
 
-    componentDidMount() {
+    async componentDidMount() {
         window.addEventListener('resize', this.resize);
+        try {
+            const res = await fetch('http://127.0.0.1:8000/api/');
+            const side_blog_list = await res.json();
+            this.setState({
+                side_blog_list
+            });
+            for (var i=0; i<side_blog_list.length; i++) {
+                // console.log(side_blog_list[i])
+            }
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.resize);
     }
 
+    getBlogComponent(blogs) {
+        var side_blog_output = [];
+        var side_blog_section = [];
+        for (var i=0; i<blogs.length; i++) {
+            if (side_blog_section.length > 1) {
+                side_blog_output.push(
+                    <Row flexGrow={1} flexDirection="column" alignSelf="center"
+                        breakpoints={{
+                        880: {
+                                flexDirection: "column"
+                            },
+                        }}
+                    >
+                    <SideBlogPostComponent
+                        title={side_blog_section[0].title}
+                        description={side_blog_section[0].short_description}
+                    />
+                    <SideBlogPostComponent
+                        title={side_blog_section[1].title}
+                        description={side_blog_section[1].short_description}
+                    />
+                    </Row>
+                );
+                side_blog_section = [];
+            }
+            side_blog_section.push(blogs[i]);
+
+            // This conditional handles the last element of the blogs array
+            if (blogs.length % 2 == 1 && i == blogs.length - 1) {
+                side_blog_output.push(
+                    <Row flexGrow={1} flexDirection="column" alignSelf="center">
+                     <SideBlogPostComponent
+                        title={blogs[i].title}
+                        description={blogs[i].short_description}
+                    />
+                    </Row>          
+                )
+                side_blog_section = []
+            }
+        }
+        return side_blog_output
+    }
+
     resize = () => this.forceUpdate();
 
     render() {
-        const { width, height, logo, title, subtitle } = this.state;
+        const { title, subtitle, side_blog_list } = this.state;
         return (
             <Column vertical="spaced">
-                <div style={{ height: 24,}} ></div>
+                <div name="divider" style={{ height: 24,}} ></div>
                 <HeaderComponent/>
                 <HeaderImgComponent 
-                  logo={logo}
                   title={title} 
                   subtitle={subtitle}
                 />
@@ -92,10 +147,7 @@ class Home extends React.Component {
                     </Column>
                     <Column flexGrow={1} horizontal="center" style={mainBlogStyle}> 
                         <p className="MainBlogInfo">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Donec faucibus quam vitae dictum volutpat. 
-                            Quisque quis ante a sem ullamcorper cursus quis id felis. 
-                            Quisque tellus eros, egestas vel rutrum nec, molestie non ipsum. 
+                            payaya payaya payaya payaya 
                         </p>
                     </Column>
                 </Row>
@@ -103,57 +155,56 @@ class Home extends React.Component {
                     <div className="DividerLine"/>
                     <div className="DividerNoLine"/>
                 </Column>
-                <Row alignSelf="center" className="SideBlogComponent" 
+                <Column flexGrow={1} alignSelf="center" className="SideBlogComponent" 
                     breakpoints={{
                     880: {
-                            flexDirection: "column-reverse"
+                            flexDirection: "column"
                         },
                     }}
                 >
-                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
-                        <img 
-                            src={BlogImg}
-                            className="SideBlogImg"
-                        />
-                        <span> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec faucibus quam vitae dictum volutpat.  
-                        </span>
-                    </Column>
-                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
-                        <img 
-                            src={BlogImg}
-                            className="SideBlogImg"
-                        />
-                        <span> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec faucibus quam vitae dictum volutpat.  
-                        </span>
-                    </Column>
-                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
-                        <img 
-                            src={BlogImg}
-                            className="SideBlogImg"
-                        />
-                        <span> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec faucibus quam vitae dictum volutpat.  
-                        </span>
-                    </Column>
-                    <Column flexGrow={1} horizontal="center" style={sideBlogStyle}> 
-                        <img 
-                            src={BlogImg}
-                            className="SideBlogImg"
-                        />
-                        <span> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec faucibus quam vitae dictum volutpat.  
-                        </span>
-                    </Column>
-                </Row>
+                    {this.getBlogComponent(side_blog_list)}
+                </Column>
             </Column>
         );
     }
 }
 
 export default Home;
+
+                    // {this.state.side_blog_list.map(blog_data => {
+                    //     console.log('asyayay')
+                    //     // console.log(typeof blog_data)
+                    //         // this.getBlogComponent(blog_data)
+                    // })}}
+
+                    // <div name="SideBlogContainer">
+                        // {this.loadAllBlogButtons()}
+                    // </div>
+
+                // {this.state.side_blog_list.map(blog_data => (
+                //     <SideBlogPostComponent
+                //         title = {blog_data.title}
+                //         description = {blog_data.short_description}
+                //     />
+                // ))}
+
+                    // <Row>
+                    //  <SideBlogPostComponent
+                    //     title="ayaya"
+                    //     description="ayaya"
+                    // />
+                    //  <SideBlogPostComponent
+                    //     title="ayaya"
+                    //     description="ayaya"
+                    // />
+                    // </Row>     
+                    // <Row>
+                    //  <SideBlogPostComponent
+                    //     title="ayaya"
+                    //     description="ayaya"
+                    // />
+                    //  <SideBlogPostComponent
+                    //     title="ayaya"
+                    //     description="ayaya"
+                    // />
+                    // </Row>                

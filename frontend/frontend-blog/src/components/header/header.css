@@ -7,3 +7,17 @@
     text-decoration: none;
     margin-right: 20px;
 }
+.NavbarStyle {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    max-height: 24;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    z-index: 100;
+    background-color: black;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 15px;
+}
