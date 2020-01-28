@@ -9,6 +9,7 @@ verify_ssl = true
 waitress = "*"
 whitenoise = "*"
 requests = "*"
+six = "*"
 
 [requires]
 python_version = "3.6"
