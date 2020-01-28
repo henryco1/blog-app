@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'post',
-    'rest_framework'
+    'rest_framework',
+    'comment',
 ]
 
 MIDDLEWARE = [
