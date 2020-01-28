@@ -15,5 +15,5 @@ class PostDetailView(generics.RetrieveAPIView):
     """View For The Details Of A Single Post"""
 
     queryset = Post.objects.all()
-    serializer_class = PostDetailSerializer
+    serializer_class = PostSerializer
     lookup_field = 'slug'
