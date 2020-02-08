@@ -2,10 +2,14 @@
 Psuedo classes vs psuedo elements
 */
 .Item {
-    display: block;
+    display: inline-block;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
     list-style-type: none;
+
     padding-right: 46px;
-    padding-top: 24px;
+    padding-top: 10px;
+
     float: right;
     font-size: 20px;
     text-decoration: none;
@@ -14,20 +18,16 @@ Psuedo classes vs psuedo elements
 }
 
 .Item.active {
-    color: rgb(138, 245, 111);
+    color: rgb(0, 183, 255);
 }
 /*psuedoclass*/
 .Item:hover {
-    color: rgb(138, 245, 111);
+    color: rgb(0, 183, 255);
 }
 /*psuedoelement*/
 .Item::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width 0.5s ease, background-color 0.5s ease;
+    width: 100%;
+    background: rgb(0, 183, 255);
 }
 /*psuedoclass*/
 .Item:hover:after {

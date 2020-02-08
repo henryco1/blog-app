@@ -7,7 +7,7 @@ class App extends Component {
     render() {
         return (
             <div className={cssClass.App}>
-                <Layout>Hello World</Layout>
+                <Layout></Layout>
             </div>
         );
     }

@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 
 import Aux from "../Aux/Aux";
-import Toolbar from "../../components/UI/Toolbar/Toolbar";
+import Toobar from "../../components/UI/Toolbar/Toolbar";
+// import Sidebar from "../../components/UI/Sidebar/Sidebar";
+import Logo from "../../components/UI/Logo/Logo";
+import cssClass from "./Layout.css";
 
 class Layout extends Component {
     render() {
         return (
             <Aux>
-                <Toolbar/>
-                <p> Sidebar </p>
+                <Logo />
+                <Toobar />
+                
                 <main>{this.props.children}</main>
             </Aux>
         )
