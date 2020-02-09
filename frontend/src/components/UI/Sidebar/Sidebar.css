@@ -18,4 +18,10 @@
 
 .Close {
     transform: translateX(-110%)
-} 
+}
+
+@media (max-width: 340px) {
+    .Sidebar {
+        width: 200px;
+    }
+}
