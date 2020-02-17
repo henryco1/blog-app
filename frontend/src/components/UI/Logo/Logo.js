@@ -1,6 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import cssClass from "./Logo.css";
 
-const logo = () => <span className={cssClass.Logo}>Personal Blog</span>
+const logo = () => (
+    <Link style={{ textDecoration: "none" }} to="/">
+        {" "}
+        <span className={cssClass.Logo}>Personal Blog</span>
+    </Link>
+);
 
 export default logo;
