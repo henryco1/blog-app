@@ -40,7 +40,7 @@ class PostBody extends Component {
         if (!this.state.loading && this.state.postBody) {
             postBody = (
                 <Aux>
-                    <div>
+                    <div className={cssClass.PostBodyDiv}>
                         <h1 className={cssClass.Title}>
                             {this.state.postBody.title}
                         </h1>

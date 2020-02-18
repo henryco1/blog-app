@@ -1,29 +1,25 @@
-.Logo {
+.Comment {
+    width: 70%;
+    margin: 25px auto;
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+.Detail {
+    padding: 5px 20px;
+    color: rgb(141, 141, 141);
+}
+
+.Body {
+    padding: 5px 20px;
     color: black;
-    font-family: 'Cardo', serif;
-    float: left;
-    font-size: 30px;
-    padding-left: 20px;
-    padding-top: 10px;
-    padding-right: 5px;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 100;
 }
 
-@media (max-width: 390px) {
-    .Logo {
-        font-size: 25px;
-        padding-top: 15px;
-    }
+.Website {
+    padding: 5px 20px;
+    color: rgb(141, 141, 141);
 }
 
-@media (max-width: 340px) {
-    .Logo {
-        font-size: 23px;
-        padding-top: 20px;
-        padding-right: 10px;
-    }
+.Website a {
+    color: rgb(141, 141, 141);
 }
