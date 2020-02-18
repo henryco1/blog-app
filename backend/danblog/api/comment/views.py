@@ -21,7 +21,7 @@ def comment_list_view(request, slug):
     input the webpage can understand.
     """
     post_instance = get_object_or_404(Post, slug=slug)
-    comment_list = Comments.objects.filter(post=post_instance, is_displayed=True)
+    comment_list = Comment.objects.filter(post=post_instance, is_displayed=True)
     serializer = CommentSerializer(comment_list, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
