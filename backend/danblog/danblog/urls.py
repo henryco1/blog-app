@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # re_path(r'', views.catchall),
     path('posts/', include('api.post.urls')),
+    path('comments/', include('api.comment.urls')),
 ]
