@@ -10,7 +10,7 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = ['name', 'website', 'body', 'published_on']
 
-class CreateCommmentSerializer(serializers.ModelSerializer):
+class CommentCreateSerializer(serializers.ModelSerializer):
     """DRF Serializer Fpr Creating Comments By The User"""
 
     class Meta:

@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
-from .serializers import CommentSerializer, CreateCommmentSerializer
+from .serializers import CommentSerializer, CommentCreateSerializer
 from comment.models import Comment
 from post.models import Post
 
@@ -38,7 +38,7 @@ def comment_create_view(request, slug):
     """
     post_instance = get_object_or_404(Post, slug=slug)
     request.data['post'] = post_instance.pk
-    serializer = CreateCommmentSerializer(data=request.data)
+    serializer = CommentCreateSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
