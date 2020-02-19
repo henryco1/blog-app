@@ -6,6 +6,7 @@ import cssClass from "./PostBody.css";
 import HR from "../../components/UI/HR/HR";
 import Aux from "../../hoc/Aux/Aux";
 import Comments from "../../components/Comments/Comments";
+import CommentForm from "../CreateComment/CreateComment";
 
 class PostBody extends Component {
     state = {
@@ -62,6 +63,7 @@ class PostBody extends Component {
                         </h1>
                     </div>
                     <Comments commentsList={this.state.comments}></Comments>
+                    <CommentForm/>
                 </Aux>
             );
         }
