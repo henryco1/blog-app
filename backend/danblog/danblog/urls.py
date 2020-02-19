@@ -21,6 +21,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # re_path(r'', views.catchall),
+    path('auth/', include('rest_auth.urls')),
+    path('auth/registration/', include('rest_auth.registration.urls')),
     path('posts/', include('api.post.urls')),
     path('comments/', include('api.comment.urls')),
 ]
