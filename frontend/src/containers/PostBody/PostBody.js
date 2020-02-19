@@ -63,7 +63,7 @@ class PostBody extends Component {
                         </h1>
                     </div>
                     <Comments commentsList={this.state.comments}></Comments>
-                    <CommentForm/>
+
                 </Aux>
             );
         }
