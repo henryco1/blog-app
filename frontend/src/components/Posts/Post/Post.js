@@ -50,9 +50,9 @@ const post = props => {
                    {props.short_description}
                 </p>
                 <Link to={"posts/view/" + props.slug}>
-                    <div className={cssClass.ReadFullPost}>
-                        <Button>Read Full Post</Button>
-                    </div>
+                    <button className={cssClass.ReadFullPost}>
+                        Read Full Post
+                    </button>
                 </Link>
                 <br />
                 <div className={cssClass.PostInfo}>
